@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Predict{% endblock %}
+
+{% block content %}
+    <body>
+        <div class="mainbody">
+            <mark></mark>
+            <center>
+                <div>
+                    <h1>Result for MRI scan of a brain</h1>
+                        <img src="{{ path }}" alt="Brain" width="300" height="300">
+                        <h2>Prediction Result:</h2>
+                        <p>{{ x }}</p>
+                        <p>{{ y }}</p>
+                        {% if x == 'No tumor'%}
+                            <p>Please check for tumors.</p>
+                        {% endif %}
+                        <button onclick="window.location.href='/'">New predict</button>
+                        {% if x != 'No tumor'%}
+                            <button onclick="window.location.href='{{ url_for('yolo', path=path) }}'">Yolo</button>
+                        {% endif %}
+                </div>
+            </center>
+        </div>
+    </body>
+{% endblock %}

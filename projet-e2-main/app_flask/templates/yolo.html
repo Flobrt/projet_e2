@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}YOLO{% endblock %}
+
+{% block content %}
+    <body>
+        <div class="mainbody">
+            <center>
+                <div>
+                    <img src="{{ url_for('uploaded_file2', directory=folder, filename='image0.jpg' )}}" alt="Brain" width="300" height="300" style="display: block;">
+                    <button onclick="window.location.href='/'" style="margin-top:30px">New predict</button>
+                </div>
+            </center>
+        </div>
+    </body>
+{% endblock %}

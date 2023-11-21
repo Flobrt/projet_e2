@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <title>🧠 - {% block title %}Mon Site Web{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- <h1>🧠 CNN based tumor diagnosis</h1> -->
+        <h1 id="title-menu">
+            <center> 🧠 CNN based brain tumor diagnosis</center> 
+        </h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="/">Prediction</a></li>
+                <!-- <li><a href="/services">Services</a></li> -->
+                <li><a href="/about">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr style="padding-left:50px; padding-right:50px;">
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

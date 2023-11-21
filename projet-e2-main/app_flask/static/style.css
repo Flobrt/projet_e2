@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: 
+         url('main.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: MyWebFont;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top:25px;
+}
+.mainbody{
+    padding-left:50px;
+    padding-right:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.logo{
+    height:200px;
+    width:300px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 20px; /* Marge entre les éléments du menu */
+}
+
+#title-menu{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+h3{
+    background-color: black;
+    color: aqua;
+}
+a{
+    background-color: black;
+    color: hotpink;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+}
+mark{
+    background-color: black;
+    color: aqua;
+}
