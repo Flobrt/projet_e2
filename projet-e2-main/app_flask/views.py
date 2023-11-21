@@ -116,7 +116,6 @@ def uploaded_file(filename):
     return send_from_directory("/Volumes/Macintosh HD - Données/Users/flo/Documents/Dev/projet_e2/projet-e2-main/app_flask/upload", filename)
 
 
-
 # Route pour la page about
 @app.route('/about')
 def about():

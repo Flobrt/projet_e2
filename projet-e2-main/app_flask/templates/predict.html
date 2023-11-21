@@ -18,7 +18,7 @@
                         {% endif %}
                         <button onclick="window.location.href='/'">New predict</button>
                         {% if x != 'No tumor'%}
-                            <button onclick="window.location.href='{{ url_for('yolo', path=path) }}'">Yolo</button>
+                            <button onclick="window.location.href = '{{ url_for('yolo', path=path) }}'" >Yolo</button>
                         {% endif %}
                 </div>
             </center>
