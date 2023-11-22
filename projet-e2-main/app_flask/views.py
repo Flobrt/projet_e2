@@ -107,13 +107,13 @@ def yolo():
 @app.route('/app_flask/upload/<directory>/<filename>')
 def uploaded_file2(directory, filename):
     # return send_from_directory("/home/florian/code/projet-e2/projet-e2-main/app_flask/upload/", filename)
-    return send_from_directory(f"/Volumes/Macintosh HD - Données/Users/flo/Documents/Dev/projet_e2/projet-e2-main/app_flask/upload/{directory}", filename)
+    return send_from_directory(f"app/app_flask/upload/{directory}", filename)
 
 # Route pour la page de téléchargement
 @app.route('/app_flask/upload/<filename>')
 def uploaded_file(filename):
     # return send_from_directory("/home/florian/code/projet-e2/projet-e2-main/app_flask/upload/", filename)
-    return send_from_directory("/Volumes/Macintosh HD - Données/Users/flo/Documents/Dev/projet_e2/projet-e2-main/app_flask/upload", filename)
+    return send_from_directory("/-app/app_flask/upload", filename)
 
 
 # Route pour la page about

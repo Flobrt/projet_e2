@@ -1,0 +1,32 @@
+# Dockerfile for python environment 3.11
+FROM python:3.11
+
+# Créer et définir le répertoire de travail
+WORKDIR /app
+
+# Copier le fichier requirements.txt dans le répertoire de travail
+COPY requirements.txt .
+COPY best_model.h5 .
+COPY best.onnx .
+COPY run.py .
+COPY archive_model_classes.json . 
+COPY tests app/tests
+COPY app_flask /app/app_flask
+
+# Install libgl1-mesa-glx
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+
+# Installer les dépendances
+RUN pip install -r requirements.txt
+
+# Installez Gunicorn
+RUN pip install gunicorn
+
+# Variable d'environnement
+ENV UPLOAD_FOLDER="./app_flask/upload/"
+
+# Exposer le port 5000
+EXPOSE 5000
+
+# Spécifiez la commande à exécuter lorsque le conteneur démarre
+CMD ["gunicorn", "-w", "1", "-b", "0.0.0.0:5000", "run:app"]
