@@ -120,3 +120,8 @@ def uploaded_file(filename):
 @app.route('/about')
 def about():
     return render_template('about-us.html')
+
+# Route pour la page error
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
