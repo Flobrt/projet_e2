@@ -10,10 +10,12 @@
         About
     </b>
 </mark>
-<p>Origin project : <a href="https://github.com/divine-architect/CNN-based-brain-tumor-diagnosis">Github</a></p>
 <p>
-    This website uses a custom trained model to diagnose MRI scans of human brains in order to recognise brain tumors in MRI scan of brains. If done early, death and other complications can be prevented.
-    This serves as a tool and not actual medical advice! This tool can recognise different types of tumors as well; These include: Gioma, Pituitary and Meningioma
+    This website uses a custom trained model to diagnose MRI scans of human 
+    brains in order to recognise brain tumors in MRI scan of brains. If done 
+    early, death and other complications can be prevented.
+    This serves as a tool and not actual medical advice! This tool can 
+    recognise different types of tumors as well; These include: Gioma, Pituitary and Meningioma
 
 </p>
 
@@ -22,19 +24,16 @@
 </mark>
 
 <p>
-    I used Image AI, a Python library to train a model based on 3000+ images of brains with different types of brain tumors and without brain tumors, I used the dense-net 121 CNN deep-learning framework.
-    The model was trained on my own hardware as opposed to a Jupyter notebook. It was trained on 100 epochs in 32 batches. The Image AI library has a PyTorch backend and hence it was really easy for me to train this model.
-    You can train the model yourself with the <mark><code>trainer.py</code></mark>file from the GitHub. Or you can simply download it from the webserver thorugh <a href="/static/model.pt">this</a> link.
+    I used Image AI, a Python library to train a model based on 3000+ images 
+    of brains with different types of brain tumors and without brain tumors, 
+    I used the VGG16 CNN deep-learning model.
+    The model was trained on my own hardware as opposed to a Jupyter notebook. 
+    It was trained on 10 epochs in 32 batches. The Image AI library has a 
+    Tensorflow backend and hence it was really easy for me to train this model.
+    Also, I used YOLOv8 to detect the brain in the MRI scan and I trained it
+    with roboflow.ai dataset.
 </p>
 
-
-<mark>
-    <b>Why?</b>
-</mark>
-
-<p>This project is made as a submission to Skynet Hacks, the theme was "Social Good", I think this fits the theme as early diagnosis of brain tumors can help save lives.
-
-</p>
 
 <mark>
     <b>Technical details for nerds 🤓</b>
@@ -59,6 +58,9 @@ Moreover, the model can also be integrated into medical imaging systems to provi
         </li>
         <li>
             <a href="https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri">Dataset used for tumor detection and classification</a>
+        </li>
+        <li>
+            <a href="https://universe.roboflow.com/gauhati-university/tumor-yolov5">Roboflow dataset</a>
         </li>
     </ul>
 </p>

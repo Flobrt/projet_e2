@@ -5,8 +5,8 @@
 }
 
 body{
-    background-color: black;
-    color: white;
+    background-color: rgb(203, 203, 203);
+    color: rgb(0, 0, 0);
     font-family: MyWebFont;
     padding-left:50px;
     padding-right:50px;
@@ -49,11 +49,11 @@ body{
 }
 
 h3{
-    background-color: black;
+    background-color: rgb(203, 203, 203);
     color: aqua;
 }
 a{
-    background-color: black;
+    background-color: rgb(203, 203, 203);
     color: hotpink;
     text-decoration: none;
 }
@@ -61,6 +61,6 @@ a:hover{
     color: white;
 }
 mark{
-    background-color: black;
+    background-color: rgb(203, 203, 203);
     color: aqua;
 }
