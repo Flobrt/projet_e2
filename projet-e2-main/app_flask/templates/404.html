@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <title>🧠 - 404</title>
-</head>
-<body>
-    <header>
-        <!-- <h1>🧠 CNN based tumor diagnosis</h1> -->
-        <h1 id="title-menu">
-            <center> 🧠 404 - Error </center> 
-        </h1>
-    </header>
-    <hr style="padding-left:50px; padding-right:50px;">
-</body>
-</html>
+{% extends "base-error.html" %}
+
+{% block title %}404{% endblock %}
+
+{% block code %}404{% endblock %}

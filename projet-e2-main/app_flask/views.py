@@ -23,37 +23,11 @@ def main():
             file1.save(path)
         except:
             return render_template('index.html', error="No file selected")
-
-        # # Charger le modèle
-        # model = load_model('./best_model.h5')
         
-        # # Prédiction
-        # # Charger l'image avec PIL
-        # img = Image.open(path) 
-        # # img = image.load_img(path, target_size=(256, 256))
-        # img_array = image.img_to_array(img)
-        # img_array = preprocess_input(img_array)
-        # img_array = np.expand_dims(img_array, axis=0)
-        
-        # # Liste des labels possibles
-        # class_label = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary']
-        
-        # # Prédiction sur l'image insérée 
-        # predictions = model.predict(img_array)
-        # prediction = np.argmax(predictions)
-        
-        # # Je trouve la classe et le taux de probabilité associé 
-        # predicted_class_label = class_label[prediction]
-        # probabilities = np.max(predictions[0])
-        
-        # x=predicted_class_label
-        # y=probabilities
-         
-        # return render_template('predict.html', x=x, y=y, path=path)  
-        # retourner vers la view predict 
         return redirect(url_for('predict', path=path, filename=filename))
         
     return render_template('index.html')
+
 
 # Route pour la page de prédiction
 @app.route('/predict', methods=["GET"])
@@ -87,6 +61,7 @@ def predict():
 
     return render_template('predict.html', x=x, y=y, path=path, filename=filename)
 
+
 @app.route('/yolo', methods=["GET"])
 def yolo():
     # Load a model
@@ -104,10 +79,12 @@ def yolo():
     folder = path_1.split('/')[-1]
     return render_template('yolo.html', folder=folder)
 
+
 @app.route('/app_flask/upload/<directory>/<filename>')
 def uploaded_file2(directory, filename):
     # return send_from_directory("/home/florian/code/projet-e2/projet-e2-main/app_flask/upload/", filename)
     return send_from_directory(f"/app/app_flask/upload/{directory}", filename)
+
 
 # Route pour la page de téléchargement
 @app.route('/app_flask/upload/<filename>')
@@ -121,7 +98,26 @@ def uploaded_file(filename):
 def about():
     return render_template('about-us.html')
 
+
+# Gestionnaire pour l'erreur 400
+@app.errorhandler(400)
+def error_400(e):
+    return render_template('400.html'), 400
+
+
+# Gestionnaire pour l'erreur 401
+@app.errorhandler(401)
+def error_401(e):
+    return render_template('401.html'), 401
+
+
 # Route pour la page error
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+
+# Gestionnaire pour l'erreur 500
+@app.errorhandler(500)
+def error_500(e):
+    return render_template('500.html'), 500
